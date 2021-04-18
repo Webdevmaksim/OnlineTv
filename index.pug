@@ -1,0 +1,111 @@
+include pug-mixins/mixins
+
+- var pageTitle = 'OnlineTV'
+
+doctype html
+html(lang="en")
+    head 
+        title= pageTitle 
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="robots" content="noindex, nofollow")
+        meta(name="rating" content="general")
+        meta(name="description" content="Фильмы онлайн | смотреть в хорошем качестве")
+        link(rel="icon", href="./images/main-icon.svg")
+        link(rel="stylesheet", href="./css/style.css")
+    body 
+        include ./modules/header
+        section.section-banner 
+            .container 
+                .banner-wrapper 
+                    .banner 
+                        h2.banner__title 
+                            |Zack Snyder's 
+                            br
+                            |Justice League
+                        .banner-info 
+                            span.banner-info__year 2021
+                            span.banner-info__age 18+
+                            span.banner-info__time 4h 2min
+                            span.banner-info__rating 8.8
+                        p.banner__text 
+                            |Determined to ensure Superman's ultimate sacrifice was not
+                            br 
+                            |in vain, Bruce Wayne aligns forces with Diana Prince with
+                            br
+                            | plans to recruit a team of metahumans to protect the world
+                            br
+                            | from an approaching threat of catastrophic proportions.
+                        .banner-control 
+                            button.banner-control__btn.banner-control__btn-main Watch
+                            button.banner-control__btn.banner-control__btn-more More information
+                    .section-banner__image 
+                        img(src="images/banner.png", alt="banner")
+        section.section 
+            .container 
+                h2.section__h2
+                    a(href="javascript:void(0)").section__h2-link Trending TV Shows
+                .movies 
+                    +moviesItem('javascript:void(0)', 'images/posters/poster01.png', 'after')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster02.png', 'eMANcipation')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster03.png', 'dunkirk')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster04.png', 'the enormity of life')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster05.png', 'vanitas')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster06.png', 'something like perfect')
+        section.section 
+            .container 
+                h2.section__h2
+                    a(href="javascript:void(0)").section__h2-link Trending Movies
+                .movies 
+                    +moviesItem('javascript:void(0)', 'images/posters/poster11.png', 'maturing youth')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster12.png', 'leap year')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster13.png', 'oak island')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster14.png', 'street legal')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster15.png', 'interlock')
+                    +moviesItem('javascript:void(0)', 'images/posters/poster16.png', 'the black echo')
+                button.section__btn See more
+        section.section.section-genres 
+            .container 
+                h2.section__h2
+                    a(href="javascript:void(0)").section__h2-link Popular Genres
+                .genres 
+                    +genresItem('Romance','images/genres/genres01.svg','Romance')(class="genres-item__romance")
+                    +genresItem('Drama','images/genres/genres02.svg','drama')(class="genres-item__drama")
+                    +genresItem('Historical','images/genres/genres03.svg','historical')(class="genres-item__historical")
+                    +genresItem('Action','images/genres/genres04.svg','action')(class="genres-item__action")
+                    +genresItem('Sci-fi','images/genres/genres05.svg','sci-fi')(class="genres-item__sci-fi")
+                    +genresItem('Horror','images/genres/genres06.svg','horror')(class="genres-item__horror")
+                    +genresItem('Comedy','images/genres/genres07.svg','comedy')(class="genres-item__comedy")
+                    +genresItem('Documantary','images/genres/genres08.svg','documantary')(class="genres-item__documantary")
+        section.section 
+            .container 
+                h2.section__h2
+                    a(href="javascript:void(0)").section__h2-link Popular Actors & Directors
+                .actors 
+                    +actorsItem('Samantha Bowen','images/actors/actor01.png','javascript:void(0)')
+                    +actorsItem('Rhys Birch','images/actors/actor02.png','javascript:void(0)')
+                    +actorsItem('James Holloway','images/actors/actor03.png','javascript:void(0)')
+                    +actorsItem('Joshua Walton','images/actors/actor04.png','javascript:void(0)')
+                    +actorsItem('Patrick Elliott','images/actors/actor05.png','javascript:void(0)')
+                    +actorsItem("Morgan O'Neill",'images/actors/actor06.png','javascript:void(0)')
+        section.section 
+            .container 
+                .marketing 
+                    .marketing-item 
+                        a(href="javascript:void(0)").marketing__link
+                            img(src="images/marketing/marketing01.png", alt="").marketing__img
+                    .marketing-item 
+                        img(src="images/marketing/marketing02.svg", alt="2021").marketing__img-year
+                        h2.marketing-title Coming Soon...
+        section.section 
+            .container 
+                .offer 
+                    .offer__overlay
+                        img(src="images/offer-bg.png", alt="abstract")
+                    h2.offer__title 
+                        | Are You New Here ?
+                        br
+                        | Don’t Wait, Register Now.
+                    button.offer__btn Register Now
+
+        include ./modules/footer

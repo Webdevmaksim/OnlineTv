@@ -1,0 +1,640 @@
+// FONTS
+@import "_font"
+//NORMALIZE CSS
+@import "_normalize"
+// colours
+$white: #ffffff
+$black: #000000
+$black_2: #2F2E2E
+$footer_black: #101012
+$main-gradient: linear-gradient(316.53deg, #26FFF2 13.2%, #326CFF 71.54%)
+
+// Site settings
+*
+    box-sizing: border-box
+button
+    &:focus
+        outline: none
+html
+    font-size: 10px
+body
+    background-color: $black
+    color: $white
+    font-size: 16px
+    font-family: 'Mulish', sans-serif
+.container
+    max-width: 1440px
+    margin: 0 auto
+    
+    @media screen and ( max-width: 1400.1px )
+        max-width: 1320px
+    @media screen and ( max-width: 1200.1px )
+        max-width: 1140px
+    @media screen and ( max-width: 992.1px )
+        max-width: 960px
+    @media screen and ( max-width: 768.1px )
+        max-width: 720px
+    @media screen and ( max-width: 576.1px )
+        max-width: 540px
+    @media screen and ( max-width: 480px )
+        width: 100%
+        padding: 0 16px
+.section
+    &-genres
+        margin-top: 4rem
+    padding-top: 5rem
+    &__btn
+        display: flex
+        justify-content: center
+        align-items: center
+        background: $main-gradient
+        color: $white
+        border-radius: 10rem
+        transition: .2s ease box-shadow
+        font-weight: 800
+        border: none
+        height: 5rem
+        width: 14.1rem
+        margin-top: 5.5rem
+        box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5)
+        &:hover
+            box-shadow: none
+            cursor: pointer
+    &__h2
+        font-size: 2.8rem
+        line-height: 2rem
+        padding-left: 2rem
+        position: relative
+        font-weight: 700
+        display: inline-block
+        padding-right: 2.5rem
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            right: 0
+            top: calc(50% - .7rem)
+            width: 1rem
+            height: 1rem
+            border-top: 2px solid $white
+            border-right: 2px solid $white
+            transform: rotate(45deg)
+        &::before
+            content: ''
+            display: block
+            width:  .8rem 
+            height: 3.5rem
+            border-radius: 5rem
+            background: $main-gradient
+            position: absolute
+            left: 0
+            top: calc( 50% - 1.7rem )
+        &-link
+            text-decoration: none
+            color: $white
+.section-banner
+    border-bottom: 0.2rem solid $black_2
+    position: relative
+    overflow: hidden
+    &__image
+        position: absolute
+        right: 0
+        height: 100%
+        top: 0
+        z-index: -1
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+// HEADER   
+.header
+    display: flex
+    justify-content: space-between
+    max-width: 144rem
+    margin: 0 auto
+    padding: 1.5rem
+    align-items: center
+// Navigation
+.nav
+    display: flex
+    align-items: center
+    list-style: none
+    padding-left: 0
+    &-item
+        margin: 0  2.5rem
+    &-link
+        font-weight: 700
+        text-decoration: none
+        color: rgba($white, .5)
+        transition: .2s ease color
+        &:hover
+            color: rgba($white, 1)
+        &.active
+            color: rgba($white,1 )
+            &::after
+                content: ''
+                display: block
+                margin-top: .5rem
+                height: .2rem
+                width: 100%
+                border-radius: 5rem
+                background: $main-gradient
+// CONTROL
+.control
+    padding-left: 0
+    list-style: none
+    display: flex
+    align-items: center
+    &-item
+        margin-left: 7.5rem    
+    &-btn
+        display: block
+        border: none
+        outline: none
+        background: transparent
+        &:hover
+            cursor: pointer
+        &_search
+            background: center / cover no-repeat url("../images/search.svg")
+            width: 1.8rem
+            height: 1.8rem
+        &_notice
+            background: center / cover no-repeat url("../images/notice.svg")
+            width: 2.13rem
+            height: 2.352rem
+        &_account
+            background: center / cover no-repeat url("../images/account.svg")
+            width: 1.8rem
+            height: 1.93rem
+// BANNER
+.banner
+    max-width: 56.2rem
+    padding-top: 5rem
+    padding-bottom: 20.3rem
+    background-color: $black
+    box-shadow: 100px 0px 100px #000000
+    &-wrapper
+        position: relative
+    &__title
+        font-family: 'Marcellus', serif
+        font-size: 8rem
+        line-height: .9
+        font-weight: 400
+        margin-bottom: 5rem
+    &-info
+        font-weight: 800
+        margin-bottom: 2.9rem
+        &__year
+            margin-right: 1.8rem
+        &__age
+            margin-right: 1.8rem
+            position: relative
+            width: 6rem
+            display: inline-block
+            text-align: center
+            &::before
+                content: ''
+                display: block
+                width: 100%
+                height: 2.4rem
+                background: center / cover no-repeat url('../images/age.svg')
+                position: absolute
+                left: 0
+                top: calc( 50% - 1.2rem )
+                right: 0
+        &__time
+            margin-right: 5.3rem
+        &__rating
+            position: relative
+            &::after
+                content: ''
+                display: block
+                position: absolute
+                top: calc( 50% - .8rem )
+                right: calc( -50% - .8rem )
+                margin-left: 1rem
+                width: 1.6rem
+                height: 1.6rem
+                background: center / cover no-repeat url('../images/star.svg')
+    &__text
+        color: #c2c2c2
+        font-size: 1.8rem
+        line-height: 1.6
+        font-weight: 400
+        font-family: 'Mulish', sans-serif
+    &-control
+        margin-top: 3.1rem
+        &__btn
+            border: none
+            background: transparent
+            border-radius: 10rem
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            font-weight: 800
+            margin-right: 3rem
+            padding: 1.5rem 3rem
+            cursor: pointer
+            &:last-child
+                margin-right: 0
+            &-main
+                background: $main-gradient
+                color: $white
+                position: relative
+                padding-left: 6rem
+                box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5)
+                transition: .2s ease box-shadow
+                &:hover
+                    box-shadow: 0px 0px 0px rgba(50, 108, 255, 0.5)
+                &::after
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 1.4rem
+                    height: 1.8rem
+                    left: 3rem
+                    top: calc( 50% - .9rem )
+                    background: center / cover no-repeat url('../images/play.svg')
+            &-more
+                background-color: $white
+                color: #323232
+                transition: .2s ease background-color, .2s ease color
+                &:hover
+                    color: $white
+                    background-color: transparent
+// Trending TV SHOWS 
+.movies
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: 2.1rem
+    flex-wrap: wrap
+    &:nth-of-type(2)
+        margin-bottom: 10rem
+    &-item
+        flex: 0 0 14%
+    &__link
+        overflow: hidden
+        width: 100%
+        height: 30.9rem
+        display: block
+        border-radius: 2rem
+        transition: .2s ease box-shadow
+        &:hover
+            box-shadow: 0px 0px 20px rgba(44, 176, 249, 0.5)
+    &__img
+        width: 20.6rem
+        height: 30.9rem
+        overflow: hidden
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+// GENRES
+.genres
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between  
+    margin-top: 2.1rem
+    &-icon
+        width: 8rem
+        height: 8rem
+        margin-top: 1rem
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    &__title
+        font-weight: 700
+        font-size: 2.8rem
+        margin: .2rem 0 0 0
+    &-item
+        flex: 0 0 23.7%
+        display: flex
+        border-radius: 2rem
+        justify-content: center
+        align-items: center
+        height: 19.8rem
+        flex-direction: column
+        cursor: pointer
+        &:nth-of-type(-n+4)
+            margin-bottom: 2.7rem
+        &__romance
+            background: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%)
+            &:hover
+                background: linear-gradient(240deg, #FD093F 2.4%, #F383F1 100%)
+        &__drama
+            background: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%)
+            &:hover
+                background: linear-gradient(240deg, #0FFFDA 2.22%, #3CDB77 68.84%)
+        &__historical
+            background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%)
+            &:hover
+                background: linear-gradient(240deg, #B936FF 2.4%, #57DEDA 100%)
+        &__action
+            background: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%)
+            &:hover
+                background: linear-gradient(240deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%)
+        &__sci-fi
+            background: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%)
+            &:hover
+                background: linear-gradient(240deg, #FF6472 2.4%, #FDA75D 100%)
+        &__horror
+            background: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%)
+            &:hover
+                background: linear-gradient(240deg, #13547A 2.37%, #80D0C7 96.77%)
+        &__comedy
+            background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%)
+            &:hover
+                background: linear-gradient(240deg, #FFF77B 2.37%, #FFBF42 50%)
+        &__documantary
+            background: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%)
+            &:hover
+                background: linear-gradient(240deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%)
+// ACTORS
+.actors
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    margin-top: 2.6rem
+    &-item
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-decoration: none
+        color: $white
+        &:hover
+            .actors-img
+                img
+                    transform: scale(1.1)
+    &-img
+        overflow: hidden
+        width: 19rem
+        height: 19rem
+        border-radius: 100%
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: .2s ease transform 
+    &__title
+        font-weight: 700
+        font-size: 1.8rem   
+        text-align: center
+        line-height: 1.1
+        margin-top: 2.3rem
+// MARKETING 
+.marketing
+    display: flex
+    align-items: center
+    justify-content: space-between
+    text-align: center
+    margin-top: 2.1rem
+    background:  linear-gradient(87.02deg, #0D1A73 29.67%, #000000 70.52%)
+    border-radius: 2rem
+    height: 34.1rem
+    overflow: hidden
+    &__link
+        display: block
+        position: relative
+        height: 101%
+        left: -1%
+        top: -1%
+        bottom: -1%
+    &__img
+        border-radius: 2rem 0 0 2rem
+        width: 100%
+        height: 100%
+        object-fit: cover
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        &-year
+            margin-bottom: .4rem
+    &-item
+        flex: 0 0 50%      
+        &:nth-of-type(1)
+            display: block
+            height: 100%
+            overflow: hidden
+        &:nth-of-type(2)
+            display: flex
+            justify-content: center
+            align-items: center
+            flex-direction: column
+    &-title
+        font-weight: 700
+        font-size: 6.4rem
+        margin: 0
+// OFFER
+.offer
+    display: flex
+    align-items: center
+    max-width: 122.4rem
+    margin: 0 auto
+    border-radius: 2rem
+    position: relative
+    overflow: hidden
+    padding: 7.1rem 5.7rem
+    padding-right: 15.2rem
+    margin-top: 7rem
+    margin-bottom: 12.1rem
+    &__overlay
+        position: absolute
+        width: 100%
+        height: 100%
+        display: block
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background: linear-gradient(336.56deg, #000000 58.12%, #FFFFFF 124.09%)
+        z-index: -2
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            opacity: .5
+    &__title
+        margin: 0
+        margin-right: auto
+        font-weight: 700
+        font-size: 6.4rem
+        line-height: 1
+    &__btn
+        margin: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: 800
+        font-size: 1.6rem
+        line-height: 1.25
+        width: 14.1rem
+        height: 5rem
+        border-radius: 10rem
+        background: $main-gradient
+        border: none
+        color: $white
+        cursor: pointer
+        box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5)
+        transition: .2 ease box-shadow
+        &:hover
+            box-shadow: none
+// FOOTER
+footer
+    background: $footer_black
+.footer
+    max-width: 1100px
+    margin: 0 auto
+    display: flex
+    padding: 7rem 0
+    align-items: flex-start
+    justify-content: space-between
+    flex-wrap: wrap
+    &-item
+        flex: 0 0 19.7rem
+    &-list
+        list-style: none
+        padding-left: 0
+        margin: 0
+        &__link
+            color: #c2c2c2
+            text-decoration: none
+            font-weight: 600
+            font-size: 1.8rem
+            line-height: 1.1
+            transition: .2s ease color
+            &:hover
+                color: $white
+        &__item
+            margin-bottom: 2rem
+            &:last-child
+                margin-bottom: 0
+// MEDIA
+@media screen and ( max-width: 1340.1px )
+    html
+        font-size: 9px
+    .banner
+        padding-left: 1.5rem
+@media screen and ( max-width: 1200.1px )
+    .movies-item
+        flex: 0 0 30%
+        &:nth-of-type(-n+2)
+            margin-bottom: 4rem
+    .genres-item
+        flex: 0 0 30%
+        &:nth-of-type(-n+6)
+            margin-bottom: 4rem
+    .actors-item
+        flex: 0 0 30%
+        &:nth-of-type(-n+3)
+            margin-bottom: 4rem
+@media screen and ( max-width: 992.1px )
+    .nav
+        &-link
+            font-size: 1.1rem
+    .banner
+        padding-left: 5rem
+        order: 0
+        padding-bottom: 5rem
+        padding-top: 0
+    .section-banner__image
+        position: static
+        order: 2
+        height: 650px
+    .footer
+        padding: 5rem 5rem
+        &-item
+            flex: 0 0 45%
+            &:nth-of-type(-n+3)
+                margin-bottom: 5rem
+    .marketing
+        &-title
+            font-size: 5rem
+    .offer
+        &__title
+            font-size: 5rem
+@media screen and ( max-width: 768.1px )
+    .header
+        flex-wrap: wrap
+    .nav
+        justify-content: center
+        &-link
+            font-size: 2rem
+    nav
+        order: 3
+        width: 100%
+    .banner
+        padding-left: 0
+        margin: 0 auto
+    .offer
+        flex-direction: column
+        &__title
+            margin-bottom: 5rem
+    .marketing
+        flex-direction: column
+        overflow: visible
+        margin-bottom: 40rem
+        &__link
+            position: static
+            display: block
+        &__img
+            position: static
+            display: block
+            &-year
+                margin-top: 5rem
+        &-item
+            position: static
+            display: block
+            min-height: 400px
+            width: 100%
+            &:last-child
+                order: 0
+                min-height: unset
+            &:first-child
+                order: 1
+                margin-top: 10rem
+@media screen and ( max-width: 576.1px )
+    html
+        font-size: 8.5px
+    .section-banner__image
+        height: 350px
+    .movies-item
+        flex: 0 0 40%
+        &:nth-of-type(-n+4)
+            margin-bottom: 5rem
+    .genres-item
+        flex: 0 0 40%
+    .actors-item
+        flex: 0 0 40%
+    .marketing__img
+        height: 350px
+@media screen and ( max-width: 480px )
+    .nav-link
+        font-size: 1.5rem
+    .banner-control__btn-main
+        margin-bottom: 2.5rem
+    .movies-item
+        flex: 0 0 100%
+        margin-bottom: 5rem
+        &:last-child
+            margin-bottom: 0
+    .movies__img
+        margin: auto
+    .genres-item
+        flex: 0 0 100%
+        margin-bottom: 5rem
+        &:last-child
+            margin-bottom: 0
+    .actors-item
+        flex: 0 0 100%
+    .offer
+        padding: 1.5rem
+        &__title
+            font-size: 4rem

@@ -1,0 +1,18 @@
+mixin moviesItem(href, src, alt )
+    .movies-item 
+        a(href=href).movies__link
+            .movies__img
+                img(src=src, alt=alt, loading="lazy")
+
+mixin genresItem(t,i,a)
+    .genres-item&attributes(attributes)
+        .genres-icon
+            img(src=i, alt=a, loading="lazy")
+        h3.genres__title=t
+
+mixin actorsItem(t,i,h)
+    a(href=h).actors-item
+        .actors-img
+            img(src=i, alt=t, loading="lazy")
+        h3.actors__title=t
+
